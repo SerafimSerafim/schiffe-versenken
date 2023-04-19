@@ -114,6 +114,9 @@ basic.forever(function () {
         aufruf_LED_Angriff()
     } else if (modus == "angriff") {
         Aufruf_LED_Setzen()
+    } else if (modus == "Verteidigung") {
+        aufruf_auf_angriff_prüfen()
+        aufruf_LED_verteidigen()
     } else if (modus == "gewonnen") {
         basic.showIcon(IconNames.Happy)
         basic.pause(500)
@@ -134,7 +137,16 @@ basic.forever(function () {
             # . . . .
             # # # . .
             `)
+    } else if (modus == "senden_angriff") {
+        basic.setLedColor(0xff0000)
+    } else if (modus == "senden_Verteidigung ") {
+        basic.setLedColor(0x007fff)
+    } else if (modus == "Teamwahl") {
+        let team = ""
+        if (team == "1") {
+            modus = "verteidungung "
+        }
     } else {
-    	
+        radio.sendValue("team", 1)
     }
 })
