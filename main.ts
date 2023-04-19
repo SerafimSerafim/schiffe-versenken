@@ -111,6 +111,29 @@ basic.forever(function () {
             fadenkreuz_x = 2
             fadenkreuz_y = 2
         }
+        aufruf_LED_Angriff()
+    } else if (modus == "angriff") {
+        Aufruf_LED_Setzen()
+    } else if (modus == "gewonnen") {
+        basic.showIcon(IconNames.Happy)
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            # . . . #
+            # . # . #
+            # . # . #
+            . # . # .
+            `)
+    } else if (modus == "verloren ") {
+        basic.showIcon(IconNames.Sad)
+        basic.pause(500)
+        basic.showLeds(`
+            # . . . .
+            # . . . .
+            # . . . .
+            # . . . .
+            # # # . .
+            `)
     } else {
     	
     }
