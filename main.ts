@@ -11,9 +11,19 @@ function aufruf_doAnschalten () {
 	
 }
 function Aufruf_LED_Setzen () {
-	
+    basic.setLedColor(0x00ffff)
+    basic.clearScreen()
+    led.plot(fadenkreuz_x, fadenkreuz_y)
+    basic.pause(15O)
+    anschalten_array = schiffe
+    anschalten_wert = 9
 }
-let schiffe = [
+let anschalten_wert = 0
+let anschalten_array: number[][] = []
+let fadenkreuz_y = 0
+let fadenkreuz_x = 0
+let schiffe: number[][] = []
+schiffe = [
 [
 0,
 0,
@@ -97,8 +107,8 @@ let schuesse = [
 0
 ]
 ]
-let fadenkreuz_x = 2
-let fadenkreuz_y = 2
+fadenkreuz_x = 2
+fadenkreuz_y = 2
 let angriff_x = -1
 let angriff_y = -1
 let modus = "setzen"
